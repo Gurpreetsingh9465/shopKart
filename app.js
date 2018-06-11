@@ -17,8 +17,8 @@ var mongoStore = require('connect-mongo')(session);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-//mongoose.connect("mongodb://localhost/collegeKart");
-mongoose.connect("mongodb://gurpreet:qwerty123@ds147180.mlab.com:47180/collegekart");
+mongoose.connect("mongodb://localhost/collegeKart");
+//mongoose.connect("mongodb://gurpreet:qwerty123@ds147180.mlab.com:47180/collegekart");
 app.use(favicon());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -54,30 +54,30 @@ app.use(function(req,res,next){
 app.use('/user',userRoutes)
 app.use('/', routes);
 
-// app.listen(3000,()=>{
-//   console.log("running at 127.0.0.1:3000");
+app.listen(3000,()=>{
+  console.log("running at 127.0.0.1:3000");
+});
+
+// if (app.get('env') === 'development') {
+//     app.use(function(err, req, res, next) {
+//         res.status(err.status || 500);
+//         res.render('error', {
+//             message: err.message,
+//             error: err
+//         });
+//     });
+// }
+//
+// // production error handler
+// // no stacktraces leaked to user
+// app.use(function(err, req, res, next) {
+//     res.status(err.status || 500);
+//     res.render('error', {
+//         message: err.message,
+//         error: {}
+//     });
 // });
-
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+//
+// app.listen(process.env.PORT || 3000, function(){
+//     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });

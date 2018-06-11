@@ -69,7 +69,7 @@ passport.use(
   new GoogleStratergy({
     //options for google stratergy
     callbackURL:'/user/google/redirect',
-    clientID : '899127904424-fsobhfpf9of5amtf3l1pkjdkfbgp0u0b.apps.googleusercontent.com/',
+    clientID : '899127904424-fsobhfpf9of5amtf3l1pkjdkfbgp0u0b.apps.googleusercontent.com',
     clientSecret : 'ohojUUoNqqaiHTZAYmyG9rf3',
   }, (accessToken, refreshToken, profile, done)=>{
     //passport callback function
