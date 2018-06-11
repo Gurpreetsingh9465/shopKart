@@ -17,8 +17,8 @@ var mongoStore = require('connect-mongo')(session);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-mongoose.connect("mongodb://localhost/collegeKart");
-//mongoose.connect("mongodb://gurpreet:qwerty123@ds147180.mlab.com:47180/collegekart");
+//mongoose.connect("mongodb://localhost/collegeKart");
+mongoose.connect("mongodb://gurpreet:qwerty123@ds147180.mlab.com:47180/collegekart");
 app.use(favicon());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
